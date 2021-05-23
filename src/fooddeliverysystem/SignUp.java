@@ -7,7 +7,8 @@ package fooddeliverysystem;
 
 /**
  *
- * @author hussa
+ * @author Syed Muattar Mehdi Zaidi
+ * @author Hussain Shahzad
  */
 public class SignUp extends javax.swing.JPanel {
 
@@ -27,19 +28,112 @@ public class SignUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        backButton = new javax.swing.JButton();
+        headingLabel = new javax.swing.JLabel();
+        UsernameInput = new javax.swing.JTextField();
+        dateOfBirthInput = new javax.swing.JTextField();
+        actorsComboBox = new javax.swing.JComboBox<>();
+        passwordInput1 = new javax.swing.JTextField();
+        contactNumberInput = new javax.swing.JTextField();
+        addressInputArea = new javax.swing.JTextArea();
+        signUpButton = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+        creditCardInput = new javax.swing.JTextField();
+        imageHolder = new javax.swing.JLabel();
+
+        backButton.setBackground(new java.awt.Color(46, 146, 46));
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        headingLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        headingLabel.setForeground(new java.awt.Color(255, 255, 255));
+        headingLabel.setText("SIGN UP");
+        add(headingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, 50));
+
+        UsernameInput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        UsernameInput.setText("Username");
+        UsernameInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameInputActionPerformed(evt);
+            }
+        });
+        add(UsernameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 320, 30));
+
+        dateOfBirthInput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        dateOfBirthInput.setText("Date Of Birth");
+        add(dateOfBirthInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 320, 30));
+
+        actorsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        actorsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actorsComboBoxActionPerformed(evt);
+            }
+        });
+        add(actorsComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 320, 30));
+
+        passwordInput1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        passwordInput1.setText("Password");
+        add(passwordInput1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 320, 30));
+
+        contactNumberInput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        contactNumberInput.setText("Contact Number");
+        add(contactNumberInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 320, 30));
+
+        addressInputArea.setColumns(20);
+        addressInputArea.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        addressInputArea.setRows(5);
+        addressInputArea.setText("Address");
+        add(addressInputArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 320, -1));
+
+        signUpButton.setBackground(new java.awt.Color(51, 255, 153));
+        signUpButton.setForeground(new java.awt.Color(255, 255, 255));
+        signUpButton.setText("Sign UP");
+        add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 620, 330, -1));
+
+        back.setBackground(new java.awt.Color(51, 255, 51));
+        back.setText("BACK");
+        add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 110, -1));
+
+        creditCardInput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        creditCardInput.setText("Credit Card");
+        add(creditCardInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, 320, 30));
+
+        imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
+        add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 760, 680));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void UsernameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameInputActionPerformed
+
+    private void actorsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actorsComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actorsComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField UsernameInput;
+    private javax.swing.JComboBox<String> actorsComboBox;
+    private javax.swing.JTextArea addressInputArea;
+    private javax.swing.JButton back;
+    private javax.swing.JButton backButton;
+    private javax.swing.JTextField contactNumberInput;
+    private javax.swing.JTextField creditCardInput;
+    private javax.swing.JTextField dateOfBirthInput;
+    private javax.swing.JLabel headingLabel;
+    private javax.swing.JLabel imageHolder;
+    private javax.swing.JTextField passwordInput1;
+    private javax.swing.JButton signUpButton;
     // End of variables declaration//GEN-END:variables
 }
