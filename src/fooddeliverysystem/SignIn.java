@@ -29,9 +29,9 @@ public class SignIn extends javax.swing.JPanel {
         System.out.print(jComboBox1.getSelectedIndex());
        switch(jComboBox1.getSelectedIndex()){
            case 0:
-               customerMenu cm=new customerMenu();
-             
-               startForm.getInstance().goTo(cm);
+               
+               AdminMenu am=new AdminMenu();
+               startForm.getInstance().goTo(am);
                break;
            case 1:
                break;
@@ -40,9 +40,9 @@ public class SignIn extends javax.swing.JPanel {
                startForm.getInstance().goTo(em);
                break;
            case 3:
-               AdminMenu am=new AdminMenu();
-               startForm.getInstance().goTo(am);
-               
+               customerMenu cm=new customerMenu();
+             
+               startForm.getInstance().goTo(cm);
                break;
        }
     
@@ -105,7 +105,7 @@ public class SignIn extends javax.swing.JPanel {
         add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 463, 110, 30));
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer", "Seller", "Employee", "Admin" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Seller", "Employee", "Customer" }));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 420, 40));
 
         imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
