@@ -1,13 +1,22 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * and ope    @Override
+    public int getTransparency() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    @Override
+    public int getTransparency() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+n the template in the editor.
  */
 package fooddeliverysystem;
 
 /**
  *
- * @author hussa
+ * @author Syed Muattar Mehdi Zaidi
+ * @author Hussain Shahzad
  */
 public class SignIn extends javax.swing.JPanel {
 
@@ -27,19 +36,61 @@ public class SignIn extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        headingLabel = new javax.swing.JLabel();
+        UsernameInput = new javax.swing.JTextField();
+        passwordInput = new javax.swing.JTextField();
+        signInButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+        imageHolder = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        headingLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 60)); // NOI18N
+        headingLabel.setForeground(new java.awt.Color(255, 255, 255));
+        headingLabel.setText("SIGN IN");
+        add(headingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+
+        UsernameInput.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        UsernameInput.setText("Username");
+        add(UsernameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 420, 40));
+
+        passwordInput.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        passwordInput.setText("Password");
+        add(passwordInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 420, 40));
+
+        signInButton.setBackground(new java.awt.Color(46, 146, 46));
+        signInButton.setForeground(new java.awt.Color(255, 255, 255));
+        signInButton.setText("LOG IN");
+        add(signInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 420, 30));
+
+        backButton.setBackground(new java.awt.Color(46, 146, 46));
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 463, 110, 30));
+
+        imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
+        add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        startForm start = new startForm();
+        start.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_backButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField UsernameInput;
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel headingLabel;
+    private javax.swing.JLabel imageHolder;
+    private javax.swing.JTextField passwordInput;
+    private javax.swing.JButton signInButton;
     // End of variables declaration//GEN-END:variables
 }
