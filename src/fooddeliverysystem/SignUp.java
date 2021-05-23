@@ -164,8 +164,9 @@ public class SignUp extends javax.swing.JPanel {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-        startForm.getInstance().dispose();
-        startForm.getInstance().setVisible(true);
+        WelcomePage p=new WelcomePage();
+        startForm.getInstance().goTo(p);
+       
     }//GEN-LAST:event_backActionPerformed
 
 

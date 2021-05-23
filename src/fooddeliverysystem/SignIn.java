@@ -114,9 +114,8 @@ public class SignIn extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        startForm start = new startForm();
-        start.setVisible(true);
-        setVisible(false);
+        WelcomePage p=new WelcomePage();
+        startForm.getInstance().goTo(p);
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void signInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInButtonActionPerformed

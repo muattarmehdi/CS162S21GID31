@@ -19,7 +19,8 @@ public class driver {
     public static void main(String[] args) 
     {
           // TODO code application logic here
-        
+        WelcomePage p=new WelcomePage();
+        startForm.getInstance().goTo(p);
         startForm.getInstance().setVisible(true);
     }
     
