@@ -49,13 +49,19 @@ public class startForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imageHolder = new javax.swing.JLabel();
         headingPanel = new javax.swing.JPanel();
         headingText = new javax.swing.JLabel();
         welcomePanel = new javax.swing.JPanel();
         welcomeText = new javax.swing.JLabel();
         SignInButton = new javax.swing.JButton();
         signUpButton = new javax.swing.JButton();
-        imageHolder = new javax.swing.JLabel();
+        Image = new javax.swing.JLabel();
+
+        imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
+        imageHolder.setMaximumSize(new java.awt.Dimension(1300, 700));
+        imageHolder.setMinimumSize(new java.awt.Dimension(1300, 700));
+        imageHolder.setPreferredSize(new java.awt.Dimension(1300, 720));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Start Menu");
@@ -73,19 +79,20 @@ public class startForm extends javax.swing.JFrame {
         headingPanel.setLayout(headingPanelLayout);
         headingPanelLayout.setHorizontalGroup(
             headingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headingPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(headingPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(headingText)
-                .addGap(121, 121, 121))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headingPanelLayout.setVerticalGroup(
             headingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headingPanelLayout.createSequentialGroup()
+            .addGroup(headingPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(headingText)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(headingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 0, 550, 50));
+        getContentPane().add(headingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 550, 60));
 
         welcomePanel.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -111,7 +118,7 @@ public class startForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(welcomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 110, 40));
+        getContentPane().add(welcomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, 110, 40));
 
         SignInButton.setBackground(new java.awt.Color(51, 204, 0));
         SignInButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -130,7 +137,7 @@ public class startForm extends javax.swing.JFrame {
                 SignInButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(SignInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 350, 40));
+        getContentPane().add(SignInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, 350, 40));
 
         signUpButton.setBackground(new java.awt.Color(102, 255, 102));
         signUpButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -149,13 +156,10 @@ public class startForm extends javax.swing.JFrame {
                 signUpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 350, 40));
+        getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 350, 40));
 
-        imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
-        imageHolder.setMaximumSize(new java.awt.Dimension(1300, 700));
-        imageHolder.setMinimumSize(new java.awt.Dimension(1300, 700));
-        imageHolder.setPreferredSize(new java.awt.Dimension(1300, 720));
-        getContentPane().add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, -60, 1000, 600));
+        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
+        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -229,6 +233,7 @@ public class startForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Image;
     private javax.swing.JButton SignInButton;
     private javax.swing.JPanel headingPanel;
     private javax.swing.JLabel headingText;
