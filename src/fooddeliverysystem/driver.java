@@ -7,15 +7,20 @@ package fooddeliverysystem;
 
 /**
  *
- * @author hussa
+ * @author Hussain Shahzad
+ * @author Syed Muattar Mehdi Zaidi
  */
+import javax.swing.*;
 public class driver {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+          // TODO code application logic here
+        startForm start = new startForm();
+        start.setVisible(true);
     }
     
 }
