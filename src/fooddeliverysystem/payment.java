@@ -27,19 +27,45 @@ public class payment extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        priceLabel = new javax.swing.JLabel();
+        creditCard = new javax.swing.JRadioButton();
+        cashOnPayment = new javax.swing.JRadioButton();
+        proceedButton = new javax.swing.JButton();
+
+        setMinimumSize(new java.awt.Dimension(1300, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        priceLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        priceLabel.setText("You want to pay the price of RS.\"price\" of \"food item\" through");
+        add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 1080, 130));
+
+        creditCard.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        creditCard.setText("Credit Card");
+        creditCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditCardActionPerformed(evt);
+            }
+        });
+        add(creditCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+
+        cashOnPayment.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        cashOnPayment.setText("Cash on Payment");
+        add(cashOnPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 240, 200, -1));
+
+        proceedButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        proceedButton.setText("PROCEED");
+        add(proceedButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 180, 60));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void creditCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditCardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_creditCardActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton cashOnPayment;
+    private javax.swing.JRadioButton creditCard;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JButton proceedButton;
     // End of variables declaration//GEN-END:variables
 }
