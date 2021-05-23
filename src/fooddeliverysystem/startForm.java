@@ -6,6 +6,7 @@
 package fooddeliverysystem;
 
 import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,6 +18,24 @@ public class startForm extends javax.swing.JFrame {
     /**
      * Creates new form startForm
      */
+    private static startForm instance;
+    
+    public static startForm getInstance(){
+    
+        if(instance == null)
+        {
+            instance= new startForm();
+        }
+        return instance;
+    } 
+            
+    public void goTo(JPanel p){
+        this.setContentPane(p);
+        this.repaint();
+        this.revalidate();
+    }
+    
+    
     public startForm() {
         initComponents();
     }
@@ -41,6 +60,7 @@ public class startForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Start Menu");
         setBounds(new java.awt.Rectangle(0, 0, 531, 530));
+        setPreferredSize(new java.awt.Dimension(1300, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         headingPanel.setBackground(new java.awt.Color(153, 255, 153));
@@ -122,9 +142,15 @@ public class startForm extends javax.swing.JFrame {
                 signUpButtonMouseExited(evt);
             }
         });
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUpButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 350, 40));
 
         imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
+        imageHolder.setPreferredSize(new java.awt.Dimension(1300, 720));
         getContentPane().add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 540));
 
         pack();
@@ -132,9 +158,8 @@ public class startForm extends javax.swing.JFrame {
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
         // TODO add your handling code here:
-            SignIn login = new SignIn();
-            login.setVisible(true);
-            setVisible(false);
+            SignIn s=new SignIn();
+            this.goTo(s);
     }//GEN-LAST:event_SignInButtonActionPerformed
 
     private void SignInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseEntered
@@ -157,6 +182,12 @@ public class startForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         signUpButton.setBackground(Color.GREEN);
     }//GEN-LAST:event_signUpButtonMouseExited
+
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
+        // TODO add your handling code here:
+        SignUp s=new SignUp();
+        this.goTo(s);
+    }//GEN-LAST:event_signUpButtonActionPerformed
     
     /**
      * @param args the command line arguments

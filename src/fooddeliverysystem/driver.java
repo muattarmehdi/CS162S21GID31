@@ -19,8 +19,8 @@ public class driver {
     public static void main(String[] args) 
     {
           // TODO code application logic here
-        startForm start = new startForm();
-        start.setVisible(true);
+        
+        startForm.getInstance().setVisible(true);
     }
     
 }

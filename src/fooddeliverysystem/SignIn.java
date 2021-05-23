@@ -23,6 +23,31 @@ public class SignIn extends javax.swing.JPanel {
     /**
      * Creates new form SignIn
      */
+    
+    
+    public void login(){
+        System.out.print(jComboBox1.getSelectedIndex());
+       switch(jComboBox1.getSelectedIndex()){
+           case 0:
+               
+               AdminMenu am=new AdminMenu();
+               startForm.getInstance().goTo(am);
+               break;
+           case 1:
+               break;
+           case 2:
+               EmployeeMenu em=new EmployeeMenu();
+               startForm.getInstance().goTo(em);
+               break;
+           case 3:
+               customerMenu cm=new customerMenu();
+             
+               startForm.getInstance().goTo(cm);
+               break;
+       }
+    
+    }
+    
     public SignIn() {
         initComponents();
     }
@@ -41,6 +66,7 @@ public class SignIn extends javax.swing.JPanel {
         passwordInput = new javax.swing.JTextField();
         signInButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         imageHolder = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,7 +74,7 @@ public class SignIn extends javax.swing.JPanel {
         headingLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 60)); // NOI18N
         headingLabel.setForeground(new java.awt.Color(255, 255, 255));
         headingLabel.setText("SIGN IN");
-        add(headingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+        add(headingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         UsernameInput.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         UsernameInput.setText("Username");
@@ -61,6 +87,11 @@ public class SignIn extends javax.swing.JPanel {
         signInButton.setBackground(new java.awt.Color(46, 146, 46));
         signInButton.setForeground(new java.awt.Color(255, 255, 255));
         signInButton.setText("LOG IN");
+        signInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signInButtonActionPerformed(evt);
+            }
+        });
         add(signInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 420, 30));
 
         backButton.setBackground(new java.awt.Color(46, 146, 46));
@@ -73,6 +104,10 @@ public class SignIn extends javax.swing.JPanel {
         });
         add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 463, 110, 30));
 
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Seller", "Employee", "Customer" }));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 420, 40));
+
         imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
         add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -84,12 +119,18 @@ public class SignIn extends javax.swing.JPanel {
         setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
+    private void signInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInButtonActionPerformed
+        // TODO add your handling code here:
+        login();
+    }//GEN-LAST:event_signInButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField UsernameInput;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel headingLabel;
     private javax.swing.JLabel imageHolder;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JTextField passwordInput;
     private javax.swing.JButton signInButton;
     // End of variables declaration//GEN-END:variables
