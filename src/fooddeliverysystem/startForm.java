@@ -60,6 +60,7 @@ public class startForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Start Menu");
         setBounds(new java.awt.Rectangle(0, 0, 531, 530));
+        setMinimumSize(new java.awt.Dimension(1300, 700));
         setPreferredSize(new java.awt.Dimension(1300, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -73,17 +74,18 @@ public class startForm extends javax.swing.JFrame {
         headingPanelLayout.setHorizontalGroup(
             headingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headingPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(headingText))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(headingText)
+                .addGap(121, 121, 121))
         );
         headingPanelLayout.setVerticalGroup(
             headingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headingPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headingPanelLayout.createSequentialGroup()
                 .addComponent(headingText)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(headingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, 50));
+        getContentPane().add(headingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 0, 550, 50));
 
         welcomePanel.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -103,13 +105,13 @@ public class startForm extends javax.swing.JFrame {
         );
         welcomePanelLayout.setVerticalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(welcomePanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(welcomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(welcomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 110, 40));
+        getContentPane().add(welcomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 110, 40));
 
         SignInButton.setBackground(new java.awt.Color(51, 204, 0));
         SignInButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -128,7 +130,7 @@ public class startForm extends javax.swing.JFrame {
                 SignInButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(SignInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 350, 40));
+        getContentPane().add(SignInButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 350, 40));
 
         signUpButton.setBackground(new java.awt.Color(102, 255, 102));
         signUpButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -147,11 +149,13 @@ public class startForm extends javax.swing.JFrame {
                 signUpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 350, 40));
+        getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 350, 40));
 
         imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
+        imageHolder.setMaximumSize(new java.awt.Dimension(1300, 700));
+        imageHolder.setMinimumSize(new java.awt.Dimension(1300, 700));
         imageHolder.setPreferredSize(new java.awt.Dimension(1300, 720));
-        getContentPane().add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 540));
+        getContentPane().add(imageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, -60, 1000, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
