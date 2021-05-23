@@ -35,7 +35,6 @@ public class startForm extends javax.swing.JFrame {
         this.revalidate();
     }
     
-    
     public startForm() {
         initComponents();
     }
