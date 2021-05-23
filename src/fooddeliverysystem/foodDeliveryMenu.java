@@ -32,8 +32,8 @@ public class foodDeliveryMenu extends javax.swing.JPanel {
         searchTextField = new javax.swing.JTextField();
         okButton = new javax.swing.JButton();
         foodButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        outletsButton = new javax.swing.JButton();
+        mainImageHolder = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 255, 0));
         setMinimumSize(new java.awt.Dimension(1300, 700));
@@ -70,12 +70,12 @@ public class foodDeliveryMenu extends javax.swing.JPanel {
         foodButton.setText("Food");
         add(foodButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 313, 293));
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jButton2.setText("OUTLETS");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 331, 293));
+        outletsButton.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        outletsButton.setText("OUTLETS");
+        add(outletsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 331, 293));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eleventPhotoEdit.jpg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 700));
+        mainImageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eleventPhotoEdit.jpg"))); // NOI18N
+        add(mainImageHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
@@ -90,9 +90,9 @@ public class foodDeliveryMenu extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton foodButton;
     private javax.swing.JLabel headingLabel;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel mainImageHolder;
     private javax.swing.JButton okButton;
+    private javax.swing.JButton outletsButton;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JLabel subheadingLabel;
     // End of variables declaration//GEN-END:variables
