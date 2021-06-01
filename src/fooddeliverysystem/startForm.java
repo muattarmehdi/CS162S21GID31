@@ -58,15 +58,12 @@ public class startForm extends javax.swing.JFrame {
         Image = new javax.swing.JLabel();
 
         imageHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
-        imageHolder.setMaximumSize(new java.awt.Dimension(1300, 700));
-        imageHolder.setMinimumSize(new java.awt.Dimension(1300, 700));
         imageHolder.setPreferredSize(new java.awt.Dimension(1300, 720));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Start Menu");
         setBounds(new java.awt.Rectangle(0, 0, 531, 530));
         setMinimumSize(new java.awt.Dimension(1300, 700));
-        setPreferredSize(new java.awt.Dimension(1300, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         headingPanel.setBackground(new java.awt.Color(153, 255, 153));
@@ -158,7 +155,7 @@ public class startForm extends javax.swing.JFrame {
         getContentPane().add(signUpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 350, 40));
 
         Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FirstPhotoEdit.jpg"))); // NOI18N
-        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
+        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
