@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package fooddeliverysystem;
+import java.text.SimpleDateFormat;  
+import java.util.Date;
+import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import java.util.LinkedList;
 
 /**
  *
@@ -14,6 +19,8 @@ public class Customers extends javax.swing.JPanel {
     /**
      * Creates new form Customers
      */
+    CustomerData data=new CustomerData();
+    
     public Customers() {
         initComponents();
     }
@@ -93,21 +100,15 @@ public class Customers extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Add Customer"));
 
-        jTextField1.setText("jTextField1");
+        jDateChooser1.setDateFormatString("dd-MMM-yyyy");
 
-        jTextField2.setText("jTextField2");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
-
-        jTextField5.setText("jTextField5");
-
-        jTextField6.setText("jTextField6");
-
-        jPasswordField1.setText("jPasswordField1");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bronze", "Silver", "Gold" }));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -117,6 +118,11 @@ public class Customers extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Add");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Name:");
 
@@ -232,18 +238,26 @@ public class Customers extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Id", "Contact no", "Category", "Edit", "Delete"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true
+            };
 
-        jTextField7.setText("jTextField7");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         jButton3.setText("Search");
 
@@ -295,6 +309,38 @@ public class Customers extends javax.swing.JPanel {
         startForm.getInstance().goTo(am);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String name= jTextField1.getText();
+        Date date= jDateChooser1.getDate();
+        
+        String contact= jTextField2.getText();
+        String pin= jTextField3.getText();
+        String id= jTextField4.getText();
+        String email= jTextField5.getText();
+        String password= jTextField6.getText();
+        String cat= jComboBox1.getSelectedItem().toString();
+        String address= jTextArea1.getText();
+        
+        boolean flag1= Data.nameValidator(name);
+        boolean flag2= Data.contactValidator(contact);
+        boolean flag3= Data.numberValidator(pin);
+        boolean flag4= true; /*Data.idValidator(id);*/
+        boolean flag5= true; /*Data.emailValidator(email);*/
+        
+        if(flag1==true && flag2== true && flag3== true && flag4==true && flag5==true){
+            
+            Customer c= new Customer(name,date,address,contact,email,password,id,cat,pin);
+            
+            data.add(c);
+            jTable1.setModel(new customerTableModel(Inventory.getInstance().getCustomers()));
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -327,4 +373,114 @@ public class Customers extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
+}
+class CustomerData extends Data{
+
+    public void add(Customer c){
+        Inventory.getInstance().getCustomers().add(c);
+        System.out.println("Added");
+    }
+    public void edit(Object obj){
+    
+    }
+    public void delete(Object obj){
+    
+    }
+    public void view(){
+    
+    }
+}
+
+class customerTableModel extends AbstractTableModel{
+
+    private LinkedList<Customer> list= new LinkedList<>();
+    private String[] columnNames = { "Name", "Id", "Contact Number", "Category", "Edit","Delete"};
+    
+    public customerTableModel(LinkedList<Customer> List){
+         this.list = List;
+    }
+
+    
+   
+    
+    @Override
+    public String getColumnName(int columnIndex){
+         return columnNames[columnIndex];
+    }
+    
+  
+
+    @Override     
+    public int getRowCount() {
+        return list.size();
+    }
+
+    @Override        
+    public int getColumnCount() {
+        return columnNames.length; 
+    }
+    
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        Customer cs = list.get(rowIndex);
+        switch (columnIndex) {
+            case 0: 
+                return cs.getName();
+            case 1:
+                return cs.getId();
+            case 2:
+                return cs.getContactno();
+            case 3:
+                return cs.getType();
+            case 4:
+                return "Edit";
+            case 5:
+                
+                 
+                        return "Delete";
+            
+           }
+           return null;
+   }
+    
+    public Class<?> getColumnClass(int columnIndex){
+       System.out.println("column index = " + columnIndex);
+          switch (columnIndex){
+             case 0:
+               return String.class;
+             case 1:
+               return String.class;
+             case 2:
+               return String.class;
+             case 3:
+               return String.class;
+             case 4: 
+               return String.class;
+                case 5: 
+               return String.class;
+             }
+             return null;
+      }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+      
+        return columnIndex == 4 || columnIndex==5;
+    }
+   
+    
+    /*public void editRow(int row){
+     String contact = (String)getValueAt(row, 2);
+     AddContactPanel p = new AddContactPanel(contact, "Edit");
+     MainForm.getInstance().goToPage(p);
+                
+    }
+    
+    
+      
+    public void deleteRow(int row){
+     String contact = (String)getValueAt(row, 2);
+     AddContactPanel p = new AddContactPanel(contact,  "Delete");
+     MainForm.getInstance().goToPage(p);
+                
+    }*/
 }

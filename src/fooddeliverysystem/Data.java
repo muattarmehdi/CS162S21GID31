@@ -11,15 +11,19 @@ package fooddeliverysystem;
  * @author Hussain Shahzad
  */
 import javax.swing.*;
-public abstract class Data 
+public class Data 
 {
-    public abstract void add(Object obj);
-    public abstract void edit(Object obj);
-    public abstract void delete(Object obj);
-    public abstract void view();
+    public void add(Object obj){
+    }
+    public void edit(Object obj){
+    }
+    public void delete(Object obj){
+    }
+    public void view(){
+    }
     
     
-    public boolean nameValidator(String name)
+    public static boolean nameValidator(String name)
     {
         boolean flag = false;
         int size = name.length();
@@ -40,7 +44,7 @@ public abstract class Data
         return flag;
     }
     
-    public boolean numberValidator(String number)
+    public static boolean numberValidator(String number)
     {
         boolean flag = false;
         
@@ -62,7 +66,7 @@ public abstract class Data
      * @param id The value of id will be validated by the rules followed in the body of the method.
      * @return flag The method will return a boolean value to give the result of validation.
      */
-    public boolean idValidator(String id)
+    public static boolean idValidator(String id)
     {
         boolean flag = false;
         int size = id.length();
@@ -75,7 +79,7 @@ public abstract class Data
         for(int i = 0 ; i < 2; i++)
         {
             if(id.charAt(i) >= 'A' && id.charAt(i) <= 'Z')
-                flag = true;
+                return false;
             else
             {
                 System.out.println("You have entered first two letters of id wrong. Please try again.");
@@ -97,7 +101,7 @@ public abstract class Data
         return flag;
     }
     
-    public boolean contactValidator(String contactNumber)
+    public static boolean contactValidator(String contactNumber)
     {
         int size = contactNumber.length();
         boolean flag = false;
@@ -120,7 +124,7 @@ public abstract class Data
         return flag; 
     }
     
-    public boolean cardValidator(String card)
+    public static boolean cardValidator(String card)
     {
         boolean flag = false;
         int size = card.length();
@@ -149,7 +153,7 @@ public abstract class Data
             return flag;
     }
     
-    public boolean emailValidator(String email)
+    public static boolean emailValidator(String email)
     {
         boolean flag = false;
         int size = email.length();
